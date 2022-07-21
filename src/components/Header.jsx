@@ -14,8 +14,10 @@ function Header() {
         <button
           className={`header__btn ${timeToRefresh === 15 && "active__btn"}`}
           onClick={() => {
-            setTimeToRefresh(15);
-            setKey((prevKey) => prevKey + 1);
+            if (timeToRefresh !== 15) {
+              setTimeToRefresh(15);
+              setKey((prevKey) => prevKey + 1);
+            }
           }}
         >
           15 Seconds
@@ -23,8 +25,10 @@ function Header() {
         <button
           className={`header__btn ${timeToRefresh === 30 && "active__btn"}`}
           onClick={() => {
-            setTimeToRefresh(30);
-            setKey((prevKey) => prevKey + 1);
+            if (timeToRefresh !== 30) {
+              setTimeToRefresh(30);
+              setKey((prevKey) => prevKey + 1);
+            }
           }}
         >
           30 Seconds
@@ -32,8 +36,10 @@ function Header() {
         <button
           className={`header__btn ${timeToRefresh === 45 && "active__btn"}`}
           onClick={() => {
-            setTimeToRefresh(45);
-            setKey((prevKey) => prevKey + 1);
+            if (timeToRefresh !== 45) {
+              setTimeToRefresh(45);
+              setKey((prevKey) => prevKey + 1);
+            }
           }}
         >
           45 Seconds
