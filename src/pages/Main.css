@@ -10,9 +10,7 @@
   width: 50%;
 }
 
-.app__container__left-section {
-    padding: 1rem;
-}
+
 
 .app__container__left__info {
   display: flex;
@@ -21,18 +19,32 @@
 
 .app__container__left__epoch {
   padding: 2rem;
-  background: #eee;
-  border-radius: 10px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 0, 179, 0);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12.9px);
+  -webkit-backdrop-filter: blur(12.9px);
   width: 25%;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
 }
 
 .app__container__left__diff {
   padding: 2rem;
-  background: #eee;
-  border-radius: 10px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 0, 179, 0);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12.9px);
+  -webkit-backdrop-filter: blur(12.9px);
   width: 20%;
+  color: #000;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  justify-content: center;
 }
 
 .epoch {
@@ -41,9 +53,7 @@
   font-family: inherit;
 }
 
-.app__container__right-section {
-  margin-right: 2rem;
-}
+
 
 .app__container__right-section__code {
   padding: 2rem;
@@ -52,6 +62,7 @@
   height: 70vh;
   overflow-y: auto;
   width: 80%;
+  margin: 0 !important;
 }
 
 .app__container__right-section__code::-webkit-scrollbar {
@@ -67,4 +78,58 @@ pre code {
   max-width: 100%;
   min-width: 100px;
   padding: 0;
+}
+
+@media (max-width: 810px) {
+  .app__container {
+    flex-direction: column;
+    margin: 0;
+  }
+
+  .app__container__left__info {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .app__container__right-section__code {
+    height: 60vh;
+    margin: 1rem 0 !important;
+  }
+
+  .app__container__left-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .app__container__left__epoch,
+  .app__container__left__diff {
+    width: 30%;
+  }
+
+  .app__container__right-section {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .app__container__right-section {
+    display: flex;
+    justify-content: center;
+  }
+
+  .app__container__left__epoch, .app__container__left__diff {
+    width: 30%;
+    padding: 1.5rem;
+    font-size: 13px;
+  }
+
+  .app__container__right-section {
+    font-size: 11px;
+  }
 }

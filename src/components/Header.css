@@ -7,6 +7,7 @@ header {
 }
 
 .header__right {
+  align-items: center;
   display: flex;
   gap: 20px;
 }
@@ -28,6 +29,7 @@ header {
 .header__btn:hover {
   color: #fff;
   cursor: pointer;
+
   background: #f725e5;
   background-image: -webkit-linear-gradient(top, #f725e5, #ff00ea);
   background-image: -moz-linear-gradient(top, #f725e5, #ff00ea);
@@ -38,7 +40,9 @@ header {
 }
 
 .active__btn {
-    transition: 0.3s;
+  transition: 0.3s;
+  outline-offset: 3px;
+  outline: 1px dashed #ff00b3;
   background: #ff00b3;
   background-image: -webkit-linear-gradient(top, #ff00b3, #c64deb);
   background-image: -moz-linear-gradient(top, #ff00b3, #c64deb);
@@ -52,15 +56,47 @@ header {
   font-size: 14px;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
-  cursor: pointer;
+  cursor: not-allowed !important;
 }
 
 .active_btn:hover {
-  background: #ff00e6;
   background-image: -webkit-linear-gradient(top, #ff00e6, #e807d2);
   background-image: -moz-linear-gradient(top, #ff00e6, #e807d2);
   background-image: -ms-linear-gradient(top, #ff00e6, #e807d2);
   background-image: -o-linear-gradient(top, #ff00e6, #e807d2);
   background-image: linear-gradient(to bottom, #ff00e6, #e807d2);
   text-decoration: none;
+  cursor: not-allowed !important;
 }
+
+@media (max-width: 555px) {
+  .header__btn:first-of-type {
+    display: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .header__btn:last-of-type {
+    display: none;
+  }
+}
+
+@media (max-width: 290px) {
+  .header {
+    padding: 10px 25px;
+  }
+  .header__left {
+    display: none;
+  }
+
+  .header__right {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* @media (max-width: 1130px) {
+}
+@media (max-width: 1040px) {
+} */
