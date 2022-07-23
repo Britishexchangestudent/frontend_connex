@@ -4,7 +4,17 @@ This project was created by Dan Ahmed :)
 
 ## Epoch
 
-Displays the most recently-fetched value for server time (retrieved by hitting endpoint /time), displayed in epoch seconds, -- explain why -- 
+Displays the most recently-fetched value for server time (retrieved by hitting endpoint /time), displayed in epoch seconds.
+
+### `serverTime`
+
+ - Within AppContext.jsx, getSetServerTime(), line 20, function runs which fires off getTime() function.
+ 
+ - getTime() hits ('/time') endpoint using axios, axios.get('/time'), and returns the data.
+ 
+ - Once data return, serverTime is set to the returned data.
+ 
+ - There is basic error handling on line 53 of Main.jsx to return null if there is no serverTime.
 
 ## Difference
 
