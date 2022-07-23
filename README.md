@@ -93,3 +93,19 @@ Prometheus metrics.
               <code>{promethusData}</code>
             </pre>
  
+
+## Header
+
+I did a bit more than what was required because i wanted to have a bit of fun.
+
+### `15 Seconds, 30 Seconds, 45 Seconds`
+
+  - In ./components/Header.jsx, there are 3 buttons which can alter the time to refresh which by default is 30, but can switch to 15 or 45.
+
+  - The time to refresh value is a dependency on all useEffect hooks in Main.jsx as to refresh the page when any of the buttons are clicked.
+  
+      - There is simple error handling where if the button is currently active, you cannot click it again to restart the refresh time.
+      
+  - Buttons are accompanied by a nice looking countdown timer which automatically repeats when time runs out
+  
+      - CountdownCircleTimer repo = https://www.npmjs.com/package/react-countdown-circle-timer
