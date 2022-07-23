@@ -2,14 +2,17 @@
 
 This project was created by Dan Ahmed :)
 
-## Displays the most recently-fetched value for server time (retrieved by hitting endpoint /time),
-displayed in epoch seconds, -- explain why -- 
+## Epoch
 
-## Displays the difference between current client machine time and the most recently-fetched
-value for server time in epoch seconds, formatted in stopwatch format
+Displays the most recently-fetched value for server time (retrieved by hitting endpoint /time), displayed in epoch seconds, -- explain why -- 
 
-## The displayed difference should update once per second. Eg. An initial difference of
-00:00:00 would change after one second to 00:00:01.
+## Difference
+
+Displays the difference between current client machine time and the most recently-fetched value for server time in epoch seconds, formatted in stopwatch format
+
+## 1 Second interval
+
+The displayed difference should update once per second. Eg. An initial difference of 00:00:00 would change after one second to 00:00:01.
 
 In the project directory, you can run:
 
