@@ -24,8 +24,37 @@ Displays the most recently-fetched value for server time (retrieved by hitting e
 
 ## Difference
 
-Displays the difference between current client machine time and the most recently-fetched value for server time in epoch seconds, formatted in stopwatch format
+Displays the difference between current client machine time and the most recently-fetched value for server time in epoch seconds, formatted in stopwatch format.
 
+### `clientTime - serverTime`
+
+ - clientTime is initially null.
+ 
+ - The useEffect hook in Main.jsx, line 25, runs which sets the clientTime to a new epoch time value, (Math.floor(new Date().getTime() / 1000))
+   and updates every second.
+   
+ - The difference is calculated via (clientTime - serverTime) but formatted incorrectly.
+ 
+ - formatTime() within utils/time.js, line 6 formats (clientTime - serverTime) correctly.
+ 
+ - formatTime() gathers seconds using the modulo function, divide by 60 and seconds = the remainder.
+     
+     - const seconds = time % 60.     (utils/time.js, line 8).
+     
+ - formatTime() gathers minutes by dividing the time by 60.
+
+     - const minutes = Math.floor(time/60).     (utils/time.js, line 9).
+     
+  - formatTime() gathers hours by dividing the time by 3600, comes from 60 * 60.
+  
+     - const hours = Math.floor(time/3600).     (utils/time.js, line 10).
+     
+  - The result is then further formatted so that if the number is less than 10, a 0 is added at the start.  (utils/time.js, line 4).
+  
+     - If result returned is 9 ---> 09 is returned
+     - If result returned is 17 ---> 17 is returned
+     
+     
 ## 1 Second interval
 
 The displayed difference should update once per second. Eg. An initial difference of 00:00:00 would change after one second to 00:00:01.
