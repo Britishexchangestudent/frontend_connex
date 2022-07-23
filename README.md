@@ -54,6 +54,7 @@ Displays the difference between current client machine time and the most recentl
      - If result returned is 9 ---> 09 is returned
      - If result returned is 17 ---> 17 is returned
      
+  - The ende result is displayed in Main.jsx, line 69.  Diff: {formatTime(clientTime - serverTime)}.
      
 ## 1 Second interval
 
