@@ -1,8 +1,15 @@
-# Getting Started with Create React App
+# Front end
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was created by Dan Ahmed :)
 
-## Available Scripts
+## Displays the most recently-fetched value for server time (retrieved by hitting endpoint /time),
+displayed in epoch seconds, -- explain why -- 
+
+## Displays the difference between current client machine time and the most recently-fetched
+value for server time in epoch seconds, formatted in stopwatch format
+
+## The displayed difference should update once per second. Eg. An initial difference of
+00:00:00 would change after one second to 00:00:01.
 
 In the project directory, you can run:
 
