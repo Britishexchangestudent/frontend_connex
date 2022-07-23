@@ -75,16 +75,21 @@ Prometheus metrics.
 
 ### `promethusData`
 
- - In Main.jsx, line 48, useEffect function runs getSetServerTime().
+ - In Main.jsx, line 48, useEffect function runs getSetPromethusData().
 
- - Within AppContext.jsx, getSetServerTime(), line 20, function runs which fires off getTime() function.
+ - Within AppContext.jsx, getSetPromethusData(), line 28, function runs which fires off getMetricsData() function.
  
- - getTime() hits ('/time') endpoint using axios, axios.get('/time'), and returns the data.
+ - getMetricsData() hits ('/metrics') endpoint using axios, axios.get('/metrics'), and returns the data.
  
  - Authorization is implemented in /api/index.js, line 4, axios.defaults.headers.common with the token = "mysecrettoken".
  
- - Once data return, serverTime is set to the returned data.
+ - Once data return, promethusData is set to the returned data.
 
- - Epoch is displayed in Main.jsx, line 65,  Epoch: {serverTime}.
+ - promethusData is displayed in Main.jsx, line 81.
+
+      - It's placed within a pre tag and code tag.            
+      
+            <pre>
+              <code>{promethusData}</code>
+            </pre>
  
- - There is basic error handling on line 53 of Main.jsx to return null if there is no serverTime.
