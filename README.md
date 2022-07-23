@@ -14,6 +14,8 @@ Displays the most recently-fetched value for server time (retrieved by hitting e
  
  - getTime() hits ('/time') endpoint using axios, axios.get('/time'), and returns the data.
  
+ - Authorization is implemented in /api/index.js, line 4, axios.defaults.headers.common with the token = "mysecrettoken".
+ 
  - Once data return, serverTime is set to the returned data.
 
  - Epoch is displayed in Main.jsx, line 65,  Epoch: {serverTime}.
